@@ -1,0 +1,14 @@
+<h1>
+<%= @number_dice.to_s + "d" + @dice_sides.to_s %> 
+</h1>
+
+
+<ul>
+Hi
+
+<% @array_of_rolls.each do |num| %>
+
+  <li> <%= num %>
+  </li>
+<%end%>
+</ul>

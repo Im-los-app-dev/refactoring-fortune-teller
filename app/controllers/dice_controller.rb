@@ -179,4 +179,19 @@ class DiceController < ApplicationController
 
     render({:template => "dice_templates/three_twenty.html.erb"})
   end
+
+
+  def dynamic_dice
+
+    @number_dice = params.fetch("amount").to_i
+    @dice_sides = params.fetch("sides")
+    @array_of_rolls = Array.new
+
+    @number_dice.to_i.times do 
+      @array_of_rolls.push(rand(@dice_sides.to_i) + 1)
+    end
+
+    render({:template => "dice_templates/infinite.html.erb"})
+  end
+
 end
